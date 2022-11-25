@@ -67,15 +67,15 @@ li.dropdown{
     background-color: white;
     max-width: auto;
     outline: 2px solid black;
+    margin-right: 20px;
 }
 
 .dropdown-content a{
     color: black;
-    padding: 14px 16px;
+    padding: 14px 14px;
     text-decoration: none;
     display: block;
     text-align: left;
-    
 }
 
 .dropdown-content a:hover{
@@ -137,7 +137,11 @@ a .login:hover{
     transition: 700ms;
 }
 
-h2{
+.prihlasenie{
+    margin-right: 20px;
+}
+
+.popismix{
     display: flex;
     font-size: 15px;
     margin-block-start: 0px;
@@ -146,7 +150,6 @@ h2{
     margin-inline-end: 0px;
     font-weight: 450;
     line-height: 80%;
-    padding-left: 15px;
     background-color: white;
 }
 
@@ -438,14 +441,35 @@ img.rozhovor1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    padding: 50px;
-    background-color: #28479D;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: #ffe156;
 }
 
 .menu-prihlasenie-a{
     margin: 0px 50px 0px 50px;
     text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.menu-prihlasenie-a:active{
+    border-bottom: 1px white #FFF;
+    padding-bottom: 10px;
+}
+
+.uvitacia-hlaska{
+    font-size: 100px;
+    margin: 50px 0px 0px 100px;
+}
+
+.uspechy{
+    margin: 50px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nadpis-uspechy{
     font-size: 40px;
-    color: white;
+    margin: 50px 0px 0px 100px;
 }
