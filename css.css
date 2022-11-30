@@ -169,6 +169,7 @@ header{
     justify-content: space-between;
     background-color: #28479D;
     margin-top: -120px;
+    padding-bottom: 30px;
 }
 
 h1.KK{
@@ -233,10 +234,16 @@ h1.news{
     object-position: top;
 }
 
+
+
 .prva-cast{
     display: flex;
     flex-direction: column;
     margin: -100px 0px 50px 0px;
+}
+
+.vsetky-rozhovory{
+    margin: 100px 0px 100px 0px;
 }
 
 .rozhovory{
@@ -366,9 +373,6 @@ img.rozhovor1{
     margin-top: 50px;
 }
 
-.priebeh-sutaze{
-    margin-top: 50px;
-}
 
 .chcem-viac{
     position: relative;
@@ -448,9 +452,20 @@ img.rozhovor1{
 
 .menu-prihlasenie-a{
     margin: 0px 50px 0px 50px;
-    text-decoration: none;
     font-size: 25px;
+    font-weight: bold;
     color: black;
+    transition: 500ms;
+    text-decoration: underline 0.15em rgba(39, 255, 27, 0);
+    text-underline-offset: 7px;
+
+}
+
+.menu-prihlasenie-a:hover{
+    color: black;
+    text-decoration: underline 3px black;
+    text-underline-offset: 7px;
+    transition: 500ms;
 }
 
 .menu-prihlasenie-a:active{
