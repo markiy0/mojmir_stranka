@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="css.css">
 
     <body>
-
-        <!-- neviem nič -->
-        <!-- vytvoril som novu branch pre mna a pre mina -->
         
         <section class="hlavicka">
 
@@ -26,7 +23,7 @@
                       
                             <img id="img" class="logomix" src="" alt="">
                             
-                            <h2 id="text" class="popismix"></h2>
+                            <h2 id="text" style="font-weight: 500;" class="popismix"></h2>
                         
                         </div>
 
@@ -122,10 +119,17 @@
 
             <div class="prva-cast">
 
-                <div class="meniace-obrazky">
-
-                    <img class="prvy-obrazok" src="obrazky/treti-obrazok.jpg" alt="">
-                    <!-- <img class="prvy-obrazok" src="treti-obrazok.jpg" alt=""> -->
+                <div id="slider">
+                   
+                        <a id="prev" href="#">&#8810;</a>
+                        <a id="next" href="#">&#8811;</a>
+                    <ul id="slideWrap"> 
+                        
+                        <li><img src="obrazky/druhy-obrazok.jpg"  alt=""></li>
+                        <li><img src="obrazky/treti-obrazok.jpg"  alt=""></li>
+                        <li><img src="obrazky/stvrty-obrazok.jpeg"  alt=""></li>
+                        <li><img src="obrazky/piaty-obrazok.jpeg"  alt=""></li>
+                     </ul>
         
                 </div>
 
@@ -390,5 +394,6 @@
     </body>
 
     <script src="nahodne-logo.js"></script>
+    <script src="carousel.js"></script>
 
 </html>
