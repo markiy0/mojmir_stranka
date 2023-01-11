@@ -1,0 +1,97 @@
+
+/* .container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.stred {
+  width: 220px;
+  height: 50px;
+  position: absolute;
+}
+
+
+.tlacitko {
+  margin-top: 80px;
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.tlacitko1 {
+  margin-top: 40px;
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.border {
+  margin-top: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 300 550;
+  stroke-dashoffset: 300;
+  transition: 1s ease-in-out;
+}
+
+.border1 {
+  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 300 550;
+  stroke-dashoffset: 300;
+  transition: 1s ease-in-out;
+}
+
+.tlacitko:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
+.tlacitko1:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
+.tlacitko:hover .border {
+  stroke-dashoffset: -550 ; 
+  stroke-width: 5px;
+}
+
+.tlacitko1:hover .border1 {
+  stroke-dashoffset: -550 ; 
+  stroke-width: 5px;
+}
+
+.tlacitko span {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tlacitko1 span {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
