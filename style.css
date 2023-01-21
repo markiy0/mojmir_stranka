@@ -1,4 +1,3 @@
-
 *,
 *::after,
 *::before {
@@ -13,7 +12,6 @@ body {
   background-color: white;
 }
 li a {
-  
   text-decoration: none;
 }
 /* -------------------------------- 
@@ -338,7 +336,7 @@ ul {
   list-style-type: none;
 }
 
-.obrazky{
+.obrazky {
   width: 80%;
   margin: 0 auto;
   height: min-content;
@@ -347,13 +345,13 @@ ul {
   align-items: center;
   flex-direction: row;
 }
-.obrayky_img{
+.obrayky_img {
   margin-bottom: 30px;
   margin-right: 3%;
   width: 15%;
   height: auto;
 }
 
-.obrayky_img:last-child{
+.obrayky_img:last-child {
   margin-right: 0;
 }

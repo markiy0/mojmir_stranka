@@ -1,18 +1,15 @@
-
-    <?php include_once 'header.php';
+<?php include_once 'header.php';
     include_once 'menu-login.php';
-    ?>
+?>
 
-    
-
-    <section>
-      <div class="uspechy">
+<section>
+    <div class="uspechy">
         <h1 class="uvitacia-hlaska">Dosiahnuté odznaky</h1>
 
         <!-- <h2 class="nadpis-uspechy">Tvoje dosiahnuté úspechy</h2> -->
-      </div>
+    </div>
 
-      <div class="obrazky">
+    <div class="obrazky">
 
         <img class="obrazky_img" src="Loga png/Casovy-menezment-0lvl.png" alt="">
         <img class="obrazky_img" src="Loga png/Citatelske-zrucnosti-0lvl.png" alt="">
@@ -20,13 +17,13 @@
         <img class="obrazky_img" src="Loga png/Praca-v-time-0lvl.png" alt="">
         <img class="obrazky_img" src="Loga png/Kryticke-myslenie-0lvl.png" alt="">
 
-      </div>
+    </div>
 
-    </section>
-    <?php include_once 'footer.php';
+</section>
+<?php include_once 'footer.php';
     ?>
-  </body>
+</body>
 
-  <script src="nahodne-logo-prihlasenie.js"></script>
-  
+<script src="nahodne-logo-prihlasenie.js"></script>
+
 </html>

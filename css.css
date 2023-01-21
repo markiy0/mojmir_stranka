@@ -11,19 +11,24 @@ body {
   background-color: white;
 }
 
-.menu-list, .odkaz-päta, .menu-prihlasenie-ul {
+.menu-list,
+.odkaz-pÃ¤ta,
+.menu-prihlasenie-ul {
   list-style-type: none;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  /* text-decoration: none; */
+  text-decoration: none;
 }
 
 .menu-prihlasenie-li {
   float: left;
 }
 
-.drop-button, .dropdown-text, .odkaz-päta, .menu-prihlasenie-a{
+.drop-button,
+.dropdown-text,
+.odkaz-pÃ¤ta,
+.menu-prihlasenie-a {
   display: inline-block;
   color: black;
   text-align: left;
@@ -167,7 +172,6 @@ header {
   background-color: #28479d;
   margin-top: -120px;
   padding-bottom: 120px;
-
 }
 
 h1.KK {
@@ -332,14 +336,16 @@ img.rozhovor1 {
 
 .na-rozhovory {
   font-size: 100px;
-  
+
   margin-bottom: 0px;
   padding-left: 100px;
 }
 
 .nadpis1 {
+  color: black;
   font-size: 30px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
+  padding: 20px 0px;
 }
 
 .citaj-viac {
@@ -357,15 +363,19 @@ img.rozhovor1 {
 }
 
 .paragraf1 {
-  padding-bottom: 20px;
+  color: black;
+  padding: 20px 0px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+  width: 350px;
 }
 
 .okraj {
-  padding: 0px 0px 0px 0x;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* width: 300px; */
 }
 
 .os {
@@ -410,7 +420,7 @@ img.rozhovor1 {
   grid-template-columns: auto auto auto;
 }
 
-h3{
+h3 {
   font-size: 40px;
   text-align: center;
 }
@@ -418,10 +428,10 @@ h3{
 .boxiky1,
 .boxiky2,
 .boxiky3 {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   margin: 0px 30px 30px 30px;
   width: 350px;
   height: 170px;
@@ -485,12 +495,10 @@ h3{
     transition: 500ms;
 } */
 
-.päta {
+.pÃ¤ta {
   /* margin-top: 100px; */
   background-color: black;
 }
-
-
 
 .dhk {
   padding-top: 30px;
@@ -503,23 +511,23 @@ h3{
   margin-bottom: 30px;
 }
 
-.menu-päta {
+.menu-pÃ¤ta {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
 }
 
-.odkaz-päta {
+.odkaz-pÃ¤ta {
   background-color: black;
   color: white;
 }
 
-.informacie-päta {
+.informacie-pÃ¤ta {
   padding: 0px 20px 0px 20px;
 }
 
-.informacie-päta:hover {
+.informacie-pÃ¤ta:hover {
   color: #28479d;
   transition: 500ms;
 }
@@ -551,6 +559,9 @@ h3{
 }
 
 .menu-prihlasenie-a-active {
+  margin: 0px 50px 0px 50px;
+  font-size: 25px;
+  font-weight: bold;
   color: black;
   text-decoration: underline 3px black;
   text-underline-offset: 7px;
@@ -559,7 +570,7 @@ h3{
 
 .uvitacia-hlaska {
   font-size: 100px;
-  margin: 0px 0px 30px 100px;
+  margin: 0px 0px 0px 100px;
 }
 
 .uspechy {
@@ -663,16 +674,15 @@ img.avatar {
 .form__title {
   margin-bottom: 2rem;
   text-align: center;
-  
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: white;
-  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 15% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border-radius: 15px;
   width: 80%; /* Could be more or less, depending on screen size */
-  padding-top: 60px;
+  padding-top: 50px;
   padding-bottom: 32px;
   padding-left: 32px;
   padding-right: 32px;
@@ -730,7 +740,7 @@ img.avatar {
   }
 }
 
-.obrazky{
+.obrazky {
   width: 80%;
   margin: 0 auto;
   height: min-content;
@@ -739,23 +749,23 @@ img.avatar {
   align-items: center;
   flex-direction: row;
 }
-.obrazky_img{
+.obrazky_img {
   margin-bottom: 30px;
   margin-right: 3%;
   width: 20%;
   height: auto;
 }
 
-.obrayky_img:last-child{
+.obrayky_img:last-child {
   margin-right: 0;
 }
 
-.odznak{
+.odznak {
   background-color: #28479d;
   padding-top: 10px;
 }
 
-.odznak-nadpis{
+.odznak-nadpis {
   font-size: 100px;
   padding-left: 100px;
   margin: 30px 0px 30px 0px;

@@ -130,9 +130,9 @@
         i
       ).getTime();
       cell.addEventListener("click", () => {
-        console.log(timestamp);
-        console.log(new Date(timestamp));
-        // console.log(cell.textContent);
+        // console.log(timestamp);
+        // console.log(new Date(timestamp));
+        // console.log(new Date(timestamp).getMonth());
         // console.log(
         //   cell.textContent +
         //     " " +
@@ -147,11 +147,36 @@
           monthList[new Date(timestamp).getMonth()] +
           " " +
           new Date(timestamp).getFullYear();
+
+        let filter_date =
+          new Date(timestamp).getFullYear() +
+          "-" +
+          String(new Date(timestamp).getMonth() + 1).padStart(2, 0) +
+          "-" +
+          cell.textContent.padStart(2, 0);
+
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          data = tr[i].getElementsByTagName("td")[0].getAttribute("data");
+
+          if (data == filter_date) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+
         document.getElementById("click_date").textContent = activitiesDate;
+        document.getElementById("click_date").dataset.data = filter_date;
 
         document.querySelector(".cell.today")?.classList.remove("today");
         cell.classList.add("today");
         document.getElementById("detail").style.display = "block";
+
+        // document
+        //   .querySelectorAll('[data="' + dateDatabase + '"]')
+        //   .classList.remove("inactive");
       });
 
       // Add a special class for today

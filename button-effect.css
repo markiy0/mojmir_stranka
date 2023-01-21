@@ -1,4 +1,3 @@
-
 /* .container {
   width: 400px;
   height: 400px;
@@ -16,7 +15,6 @@
   height: 50px;
   position: absolute;
 }
-
 
 .tlacitko {
   margin-top: 80px;
@@ -36,6 +34,17 @@
   cursor: pointer;
   background: transparent;
   border: 2px solid white;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.tlacitko2 {
+  margin-top: 40px;
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid black;
   outline: none;
   transition: 1s ease-in-out;
 }
@@ -64,6 +73,18 @@
   transition: 1s ease-in-out;
 }
 
+.border2 {
+  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: salmon;
+  stroke-dasharray: 300 550;
+  stroke-dashoffset: 300;
+  transition: 1s ease-in-out;
+}
+
 .tlacitko:hover {
   transition: 1s ease-in-out;
   background: transparent;
@@ -74,13 +95,23 @@
   background: transparent;
 }
 
+.tlacitko2:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
 .tlacitko:hover .border {
-  stroke-dashoffset: -550 ; 
+  stroke-dashoffset: -550;
   stroke-width: 5px;
 }
 
 .tlacitko1:hover .border1 {
-  stroke-dashoffset: -550 ; 
+  stroke-dashoffset: -550;
+  stroke-width: 5px;
+}
+
+.tlacitko2:hover .border2 {
+  stroke-dashoffset: -550;
   stroke-width: 5px;
 }
 
@@ -92,6 +123,12 @@
 
 .tlacitko1 span {
   color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tlacitko2 span {
+  color: black;
   font-size: 20px;
   font-weight: 600;
 }
