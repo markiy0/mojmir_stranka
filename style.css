@@ -6,11 +6,11 @@
 /* html {
   font-size: 62.5%;
 } */
-body {
+/* body {
   font-weight: 600;
   font-family: "San Francisco", "Helvetica Neue", "Arial", sans-serif;
   background-color: white;
-}
+} */
 li a {
   text-decoration: none;
 }
@@ -256,7 +256,7 @@ Main Components
   left: 0;
   top: 0;
 
-  padding: 0 5%;
+  /* padding: 0 5%; */
   opacity: 0;
   -webkit-animation-duration: 0.4s;
   -moz-animation-duration: 0.4s;
@@ -332,6 +332,10 @@ ol li {
   list-style-type: none;
 }
 
+ol {
+  display: flex;
+}
+
 ul {
   list-style-type: none;
 }
@@ -348,10 +352,32 @@ ul {
 .obrayky_img {
   margin-bottom: 30px;
   margin-right: 3%;
-  width: 15%;
+  width: 50%;
   height: auto;
 }
 
 .obrayky_img:last-child {
   margin-right: 0;
+}
+
+.get_achievement {
+  max-width: 100px;
+  max-height: auto;
+}
+
+li.selected {
+  /* display: inline-block; */
+  text-align: center;
+  /* margin-bottom: 30px;
+  margin-right: 3%;
+  width: 15%;
+  height: auto; */
+}
+
+li.selected:last-child {
+  margin-right: 0;
+}
+
+li.selected img {
+  display: inline-block;
 }

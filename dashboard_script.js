@@ -62,7 +62,6 @@
     // Next/previous button functionality
     element.querySelectorAll("button").forEach((element) => {
       element.addEventListener("click", () => {
-        console.log(element.getAttribute("data-action"));
         currentMonth.setMonth(
           currentMonth.getMonth() * 1 +
             parseInt(element.getAttribute("data-action")) * 1

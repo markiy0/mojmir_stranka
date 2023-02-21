@@ -31,18 +31,19 @@ window.onload = function() {
 
 
     // vytvorenia spojenia s dataazou
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $usernameDatabase, $passwordDatabase);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = mysqli_connect($servername ,$usernameDatabase ,$passwordDatabase );
+$db = mysqli_select_db($conn, $dbname) or die('Error ' . mysqli_error());
+mysqli_set_charset($conn, "utf8mb4");
  
+
  
- 
- $query1 = "SELECT event.id, category.capacity, category.name, event.information, event.image, event.date, event.time_start, event.address, event.reservation, category.capacity
+    $sql = mysqli_query($conn, "SELECT event.id, category.capacity, category.name, event.information, event.image, event.date, event.time_start, event.address, event.reservation, category.capacity
 FROM event
-INNER JOIN category ON event.category_id = category.id";
+INNER JOIN category ON event.category_id = category.id");
 
 
     // vykonanie prikazu v databaze
-    $stmt1 = $conn->query($query1);
+ 
     
    
 
@@ -70,27 +71,30 @@ INNER JOIN category ON event.category_id = category.id";
     echo "$tableHeader";
     
     // vrati zaznamy aj ako kluce a aj ako asociativne pole
-    while ($row = $stmt1->fetch()) {
-if ( $row['reservation'] == $row['capacity']){
+    while ($row = mysqli_fetch_array($sql)) {
+if ( $row['reservation'] == $row['capacity'] || date("Y-m-d") > $row['date']){
 
     $attribute = 'disabled';
+    $content = 'Už nie je možná rezervácia!';
 }else{
     $attribute = '';
-
+$content = 'Rezervovať!';
 }
-
+$time = substr($row['time_start'],0,5);
         $tableContent = <<<EOT
         <tr>
           <td data="{$row['date']}" >
-          <div  class='activities'>
+          <div  class='activities' style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(obrazky/{$row['image']}) no-repeat; background-size: cover;">
+          <div class='image_event'>
+                <img id='image_event' src=obrazky/$row[image]>
+                </div>
           <div class='thing'>
                 <p class="texty">
                 {$row['name']}: <span>{$row['information']}</span>
                 </p>
                 </div>
-                <div class='image_event'>
-                <img id='image_event' src=obrazky/$row[image]>
-                </div>
+                
                 <div class='address'>
                 <p class="texty">
                   Miesto: <span>{$row['address']}</span>
@@ -98,7 +102,7 @@ if ( $row['reservation'] == $row['capacity']){
                 </div>
                 <div class='time'>
                 <p class="texty">
-                  Čas: <span>{$row['time_start']}</span>
+                  Čas: <span>$time</span>
                 </p>
                 </div>
                 <div class='capacity'>
@@ -120,7 +124,7 @@ if ( $row['reservation'] == $row['capacity']){
         <button type='submit' class='save' name='reserve' onclick='select()' 
         $attribute
         >
-            Reserve 
+        $content 
         </button>
         </form>
         </div>

@@ -27,15 +27,19 @@ intro.setOptions({
 });
 
 firstLogin = document.getElementById("pozdrav").getAttribute("data");
-if (firstLogin == "Y") {
-  // console.log("prvýkrát");
-  intro.start();
-  // document.getElementById("pozdrav").setAttribute("data") = ("N");
-}
-// console.log("druhýkrát");
+
+if (firstLogin == "Y" && localStorage.getItem("key") == null) {
+  localStorage.setItem("key", "0");
+  if (firstLogin == "Y" && localStorage.getItem("key") == "0") {
+    // console.log("prvýkrát");
+
+    intro.start();
+    localStorage.setItem("key", "1");
+  }
+} // console.log("druhýkrát");
 
 // document
 //   .querySelector(".introjs-donebutton")
-//   .addEventListener("click", function () {
-//     intro.end();
-//   });
+document.getElementById("step-four").addEventListener("click", function () {
+  intro.start();
+});

@@ -2,24 +2,20 @@
 
 require_once 'credentials.php';
 
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $usernameDatabase, $passwordDatabase);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+$conn = mysqli_connect($servername ,$usernameDatabase ,$passwordDatabase );
+$db = mysqli_select_db($conn, $dbname) or die('Error ' . mysqli_error());
+mysqli_set_charset($conn, "utf8mb4");
 
 if (isset($_POST["submit"])){
 
     $email = $_POST["email"];
     $password =  $_POST["psw"];
 
-$query = "SELECT * FROM user WHERE mail='" . $email . "';";
+$sql = mysqli_query($conn,"SELECT * FROM user WHERE mail='" . $email . "';");
 
+$row = mysqli_fetch_array($sql);
+$numRows = mysqli_num_rows($sql);
 
-
-
-$stmt = $conn->query($query);
-
-$row = $stmt->fetch();
-$numRows = $stmt->rowCount();
 
 if($numRows == "0"){
     header("location: ../index.php?error=invalidEmail");
@@ -32,16 +28,18 @@ else if( $password == $row["password"]){
     $_SESSION["id"] = $row["id"];
     $_SESSION["intro"] = $row["first_login"]; 
     $_SESSION["type"] = $row["type"]; 
+    $_SESSION["mail"] = $row["mail"];
 
 
     if ($_SESSION["intro"] == 'Y'){
 
-        $query = "UPDATE `user` SET `first_login` = 'N' WHERE `user`.`id` = ".$_SESSION["id"].";";
-        $stmt = $conn->query($query);
-
+        $sql = mysqli_query($conn,"UPDATE `user` SET `first_login` = 'N' WHERE `user`.`id` = ".$_SESSION["id"].";");
+        $sql = mysqli_query($conn,"INSERT INTO `get_achievement` (`id`, `user_id`, `achievement_1`, `achievement_2`, `achievement_3`, `achievement_4`, `achievement_5`, `date`) VALUES (NULL, '".$_SESSION["id"]."', '0', '0', '0', '0', '0', current_timestamp());");
+        
+        
        
-
-
+        
+    
         
     }
     header("location: ../my-profile.php");

@@ -7,6 +7,7 @@ require 'credentials.php';
 
 $conn = mysqli_connect($servername ,$usernameDatabase ,$passwordDatabase );
 $db = mysqli_select_db($conn, $dbname) or die('Error ' . mysqli_error());
+mysqli_set_charset($conn, "utf8mb4");
 $sql = mysqli_query($conn, 'SELECT pensioners.id, pensioners.name, pensioners.surname, pensioners.information, pensioners.img, pensioners.date, pensioners.time_reservation_1, pensioners.time_reservation_2, pensioners.time_reservation_3, pensioners_reserve.time_1, pensioners_reserve.time_2, pensioners_reserve.time_3
 FROM pensioners
 INNER JOIN pensioners_reserve ON pensioners.id=pensioners_reserve.pensioners_id');
@@ -28,10 +29,10 @@ while($row = mysqli_fetch_array($sql)) {
     $timeReservation1[] = $row['time_reservation_1'];
     $timeReservation2[] = $row['time_reservation_2'];
     $timeReservation3[] = $row['time_reservation_3'];
-    $time1[] = $row['time_1'];
-    $time2[] = $row['time_2'];
-    $time3[] = $row['time_3'];
-
+    $time1[] = substr($row['time_1'],0,5);
+    $time2[] = substr($row['time_2'],0,5);
+    $time3[] = substr($row['time_3'],0,5);
+    
 
 
 
@@ -94,6 +95,7 @@ echo"
 
             <form action='reserve.php' method='POST'>
                 <input type='hidden' name='hidden_user_id' value='$id'>
+                <input id='date_o' type='hidden' name='date'>
                 <input id='pensioner_id' type='hidden' name='hidden_pensioners_id' >
                 <button name='submit' class='buttons-reservation' id='time-reservation-1' data-previous-text=''
                     data-next-text='' value='1'></button>
@@ -111,6 +113,6 @@ echo"
     <div id='image'></div>
 </div>
 
-<script src='oralna-historia.js'></script>"
+<script src='oralna-historia.js'></script>";
 
 ?>

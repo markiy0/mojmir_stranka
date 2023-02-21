@@ -1,5 +1,12 @@
-const text1_options = window.pensionersInformation_array;
+// const filter_date = require("./dashboard_script.js").filter_date;
 
+today_date = document.getElementsByClassName(".today");
+console.log(today_date.innerHtml);
+
+// cell.addEventListener("click", () => {
+//   console.log(cell.innerText);
+// });
+const text1_options = window.pensionersInformation_array;
 const text1_button = window.timeReservation1_array;
 const text2_button = window.timeReservation2_array;
 const text3_button = window.timeReservation3_array;
@@ -19,20 +26,21 @@ const mainMenu = document.getElementById("menu");
 const optionPrevious = document.getElementById("previous-option");
 const optionNext = document.getElementById("next-option");
 const inputId = document.getElementById("pensioner_id");
+const datum = document.getElementById("date_o");
 var i = 0;
 
 function control() {
-  if (text1_button[i] == null || time1[i] == "RESERVED") {
+  if (text1_button[i] == null || time1[i] != "FREE") {
     buttonReservation1.style.display = "none";
   } else {
     buttonReservation1.style.display = "inline-block";
   }
-  if (text2_button[i] == null || time2[i] == "RESERVED") {
+  if (text2_button[i] == null || time2[i] != "FREE") {
     buttonReservation2.style.display = "none";
   } else {
     buttonReservation2.style.display = "inline-block";
   }
-  if (text3_button[i] == null || time3[i] == "RESERVED") {
+  if (text3_button[i] == null || time3[i] != "FREE") {
     buttonReservation3.style.display = "none";
   } else {
     buttonReservation3.style.display = "inline-block";
@@ -50,20 +58,6 @@ const pensioners_surname = window.pensionersSurname_array;
 //   .map((str, index) => (str === filter_date ? index : null))
 //   .filter((index) => index !== null);
 
-// [
-//   "69 min. read",
-//   "7 min. read",
-//   "8 min. read",
-//   "87,658.1277 min. read",
-// ];
-
-// [
-//   "obrazky/pensioners1.jpg",
-//   "obrazky/pensioners2.jpg",
-//   "obrazky/pensioners3.jpg",
-//   "obrazky/pensioners4.jpg",
-// ];
-
 control();
 inputId.value = pensionersId[i];
 namePensioners.innerText = pensioners_name[i] + " " + pensioners_surname[i];
@@ -71,7 +65,7 @@ currentOptionText1.innerText = text1_options[i];
 buttonReservation1.innerText = text1_button[i];
 buttonReservation2.innerText = text2_button[i];
 buttonReservation3.innerText = text3_button[i];
-
+datum.value = date_array[i];
 currentOptionImage.style.backgroundImage =
   "url(obrazky/" + image_options[i] + ")";
 
@@ -87,7 +81,7 @@ optionNext.onclick = function () {
   buttonReservation2.dataset.nextText = text2_button[i];
   buttonReservation3.dataset.nextText = text3_button[i];
   namePensioners.innerText = pensioners_name[i] + " " + pensioners_surname[i];
-
+  datum.value = date_array[i];
   carousel.classList.add("anim-next");
 
   setTimeout(() => {
@@ -120,7 +114,7 @@ optionPrevious.onclick = function () {
   buttonReservation2.dataset.previousText = text2_button[i];
   buttonReservation3.dataset.previousText = text3_button[i];
   namePensioners.innerText = pensioners_name[i] + " " + pensioners_surname[i];
-
+  datum.value = date_array[i];
   carousel.classList.add("anim-previous");
 
   setTimeout(() => {

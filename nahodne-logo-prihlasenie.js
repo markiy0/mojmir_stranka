@@ -46,7 +46,7 @@ const text = document.getElementById("text");
 const link = document.getElementById("link");
 // dávam si premenných elementy podľa id s ktorými chcem pracovať - pole pre obrázok a pole pre text
 // console.log(dayList[random]);
-img.src = "Loga png/" + dayList[random];
+img.src = "Loga-png/" + dayList[random];
 
 // nastaví elementu img zdroj z poľa podľa vygenerovaného čísla
 text.textContent = textList[random];
