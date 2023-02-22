@@ -585,7 +585,7 @@ if (isset($_POST["create_oral"])){
         $mail = $_POST['email'];
         $text = $_POST['text'];
 
-        $to      = 'info@denhistoire.sk';
+        $to      = 'admin@denhistorie.sk';
         $subject = 'Otázka';
         $message = $text;
         $headers = 'From: info@denhistorie.sk' . "\r\n" .

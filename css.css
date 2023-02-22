@@ -40,7 +40,6 @@ body {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgb(255, 255, 255, 0.95);
     margin: 120px 0px;
     display: none;
   }
@@ -132,7 +131,7 @@ li.dropdown {
   position: fixed;
   background-color: white;
   max-width: 250px;
-  /* outline: 2px solid black; */
+  outline: 2px solid black;
   margin: 0px auto;
 }
 
@@ -1158,6 +1157,7 @@ h2 {
   gap: 30px;
   text-align: center;
   align-items: center;
+  background-color: rgb(255, 255, 255, 0.95);
 }
 
 /* .aktiv .menu {

@@ -305,7 +305,7 @@ $pdf->Output(__DIR__ . "/pdf/"  . "zoznam_oralna_historia".$today.".pdf", 'F');
        
 
 // Recipient 
-$to = 'milkle005@gmail.com'; 
+$to = 'admin@denhistorie.sk'; 
  
 // Sender 
 $from = 'info@denhistorie.sk'; 
