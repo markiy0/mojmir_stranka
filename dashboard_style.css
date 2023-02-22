@@ -170,7 +170,7 @@
   padding: 10px 20px;
   background-color: transparent;
   color: white;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 600;
   outline: 4px solid white;
   margin-bottom: 10px;
@@ -210,8 +210,8 @@ button {
     /* border-radius: 4px; */
     color: #222629;
     overflow: hidden;
-
-    max-width: 300px;
+    margin: 0px auto;
+    max-width: 280px;
     display: block;
   }
 
@@ -225,15 +225,15 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 300px;
+    max-width: 280px;
     height: 65px;
-    margin-bottom: 20px;
+    margin: 0px auto 20px;
   }
 
   .activities {
     color: black;
     border: 4px solid black;
-    width: 300px;
+    width: 280px;
     font-size: 20px;
     font-weight: 600;
     font-family: "San Francisco", "Helvetica Neue", "Arial", sans-serif;
@@ -242,5 +242,6 @@ button {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(obrazky/success.jpg) no-repeat;
     background-size: cover;
+    margin: 0px auto;
   }
 }
